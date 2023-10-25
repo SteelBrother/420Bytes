@@ -14,6 +14,8 @@ namespace _420BytesProyect.BM.General.Interfaces
         Task<bool> RegistrarUsuario(Usuario Usuario);
 
         Task<bool> ActualizarUsuario(Usuario Usuario);
+
+        Task<bool> BorrarUsuario(int Cedula);
     }
 
 }

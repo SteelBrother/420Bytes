@@ -38,11 +38,11 @@ namespace _420BytesProyect.BM.General
                 return new List<Planta>();
             }
         }
-        public async Task<List<PlantaxUsuario>>ConsultarPlantasPorUsuario(int Cedula )
+        public async Task<List<PlantaxUsuario>>ConsultarPlantasPorUsuario(int Cedula)
         {
             try
             {
-                var plantas = await conexionBD.QueryAsync<PlantaxUsuario>("Planta.SP_ConsultarPlantasxUsuario", new { Cedula });
+                var plantas = await conexionBD.QueryAsync<PlantaxUsuario>("Planta.SP_ConsultarPlantasPorUsuario", new { Cedula });
                 return plantas.ToList();
             }
             catch (Exception ex)

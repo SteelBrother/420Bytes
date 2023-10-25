@@ -26,7 +26,7 @@ namespace _420BytesProyect.BM.General
         {
             try
             {
-                var usuarios = await conexionBD.QueryAsync<Usuario>("dbo.TraerUsuarios");
+                var usuarios = await conexionBD.QueryAsync<Usuario>("Usuario.TraerUsuarios");
                 return usuarios.ToList();
             }
             catch (Exception ex)
@@ -40,7 +40,7 @@ namespace _420BytesProyect.BM.General
         {
             try
             {
-                var usuario = await conexionBD.QueryFirstAsync<Usuario>("dbo.TraerUsuarioXCedula" , new {Cedula});
+                var usuario = await conexionBD.QueryFirstAsync<Usuario>("Usuario.TraerUsuarioPorCedula" , new {Cedula});
                 return usuario;
             }
             catch (Exception ex)
@@ -74,6 +74,21 @@ namespace _420BytesProyect.BM.General
             {
                 logger.LogError($"Clase: {GetType().Name}, Metodo: {MethodBase.GetCurrentMethod()?.DeclaringType?.Name}, Tipo: {ex.GetType()}, Error: {ex.Message}");
                 return false;
+            }
+        }
+
+        public async Task<bool> BorrarUsuario(int Cedula)
+        {
+            try
+            {
+                var Respuesta = await conexionBD.QueryFirstAsync<bool>("Usuario.SP_BorrarUsuario", new {Cedula});
+                return Respuesta;
+            }
+            catch (Exception ex)
+            {
+
+                logger.LogError($"Clase: {GetType().Name}, Metodo: {MethodBase.GetCurrentMethod()?.DeclaringType?.Name}, Tipo: {ex.GetType()}, Error: {ex.Message}");
+                return false; 
             }
         }
     }

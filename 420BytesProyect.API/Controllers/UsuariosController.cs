@@ -37,6 +37,16 @@ namespace _420BytesProyect.API.Controllers
         public async Task<ActionResult<bool>> ActualizarUsuario(Usuario Usuario)
         {
             return await IBMUsuarios.ActualizarUsuario(Usuario);
+
         }
+
+        [HttpDelete("BorrarUsuario/{Cedula}")]
+        public async Task<ActionResult<bool>> BorrarUsuario(int Cedula)
+        {
+            return await IBMUsuarios.BorrarUsuario(Cedula);
+
+        }
+
+
     }
 }
