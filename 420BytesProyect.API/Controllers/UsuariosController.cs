@@ -10,10 +10,10 @@ namespace _420BytesProyect.API.Controllers
     public class UsuariosController : ControllerBase
     {
         private IBMUsuarios IBMUsuarios;
-        
+
         public UsuariosController(IBMUsuarios IBMUsuarios)
         {
-            this.IBMUsuarios = IBMUsuarios; 
+            this.IBMUsuarios = IBMUsuarios;
         }
 
         [HttpGet("ConsultaUsuarios")]
@@ -22,7 +22,7 @@ namespace _420BytesProyect.API.Controllers
             return await IBMUsuarios.ConsultaUsuarios();
         }
         [HttpGet("ConsultarUsuarioPorCedula")]
-        public async Task<ActionResult<Usuario>>ConsultarUsuarioPorCedula(int Cedula)
+        public async Task<ActionResult<Usuario>> ConsultarUsuarioPorCedula(int Cedula)
         {
             return await IBMUsuarios.ConsultarUsuarioPorCedula(Cedula);
         }
@@ -46,6 +46,7 @@ namespace _420BytesProyect.API.Controllers
             return await IBMUsuarios.BorrarUsuario(Cedula);
 
         }
+
 
 
     }

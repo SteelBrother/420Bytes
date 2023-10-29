@@ -91,5 +91,27 @@ namespace _420BytesProyect.BM.General
                 return false; 
             }
         }
+
+        public async Task<Usuario> Login(string NickName, string Password)
+        {
+            try
+            {
+                var Respuesta = await conexionBD.QueryFirstAsync<Usuario>("Usuario.SP_Login", new { NickName, Password });
+                if (Respuesta != null) 
+                {
+                    return Respuesta;
+                }
+                 else
+                {
+                    return new Usuario();
+                 }   
+            }
+            catch (Exception ex)
+            {
+
+                logger.LogError($"Clase: {GetType().Name}, Metodo: {MethodBase.GetCurrentMethod()?.DeclaringType?.Name}, Tipo: {ex.GetType()}, Error: {ex.Message}");
+                return new Usuario();
+            }
+        }
     }
 }

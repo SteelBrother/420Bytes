@@ -205,3 +205,4 @@ C:\Git\420Bytes\420BytesProyect.API\obj\Debug\net6.0\refint\420BytesProyect.API.
 C:\Git\420Bytes\420BytesProyect.API\obj\Debug\net6.0\420BytesProyect.API.pdb
 C:\Git\420Bytes\420BytesProyect.API\obj\Debug\net6.0\420BytesProyect.API.genruntimeconfig.cache
 C:\Git\420Bytes\420BytesProyect.API\obj\Debug\net6.0\ref\420BytesProyect.API.dll
+C:\Git\420Bytes\420BytesProyect.API\bin\Debug\net6.0\Microsoft.Extensions.Http.dll

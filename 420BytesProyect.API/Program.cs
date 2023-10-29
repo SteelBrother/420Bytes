@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -16,6 +17,8 @@ builder.Services.AddTransient<IBMUsuarios, BMUsuarios>();
 builder.Services.AddTransient<IBMPlantas, BMPlanta>();
 builder.Services.AddTransient<IBMDispositivos, BMDispositivo>();
 builder.Services.AddTransient<IBMEstados, BMEstados>();
+builder.Services.AddHttpClient();
+
 
 
 
